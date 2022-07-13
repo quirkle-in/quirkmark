@@ -12,6 +12,7 @@ const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/edit" element={<Edit />} />
+                <Route path="/:id" element={<></>} />
             </Routes>
         </BrowserRouter>
     )
