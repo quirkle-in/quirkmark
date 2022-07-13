@@ -1,17 +1,19 @@
 import React from 'react';
 import './App.css';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 
 import AppRouter from './components/Router';
+import PageComponent from './components/PageComponent';
+import { ThemeProvider } from '@emotion/react';
+import theme from './utils/theme';
 
-const markdown = `Just a link: https://reactjs.com.`;
-
-const App: React.FC  = () => {
+const App: React.FC = () => {
   return (
     <div className="App">
-      {/* <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} /> */}
-      <AppRouter />
+      <ThemeProvider theme={theme}>
+        <PageComponent>
+          <AppRouter />
+        </PageComponent>
+      </ThemeProvider>
     </div>
   );
 }
